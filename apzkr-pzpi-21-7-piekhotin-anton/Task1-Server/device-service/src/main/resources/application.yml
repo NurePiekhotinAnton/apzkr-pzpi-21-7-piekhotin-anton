@@ -1,0 +1,13 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: device-service
+  datasource:
+    url: jdbc:postgresql://device-db.postgres.database.azure.com:5432/device-db?user=postgres&password=Password1&sslmode=require
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

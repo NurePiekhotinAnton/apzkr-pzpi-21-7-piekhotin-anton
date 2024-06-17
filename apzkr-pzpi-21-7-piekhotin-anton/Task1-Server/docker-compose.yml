@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  # Postgres database for house-microservice
+  db1:
+    image: bitnami/postgresql:16.1.0-debian-11-r25
+    container_name: house-microservice-db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: house-db
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-db-network
+
+  # Postgres database for user-microservice
+  db2:
+    image: bitnami/postgresql:16.1.0-debian-11-r25
+    container_name: user-microservice-db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user-db
+    ports:
+      - "5433:5432"
+    networks:
+      - postgres-db-network
+
+  # Postgres database for device-microservice
+  db3:
+    image: bitnami/postgresql:16.1.0-debian-11-r25
+    container_name: device-microservice-db
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: device-db
+    ports:
+      - "5434:5432"
+    networks:
+      - postgres-db-network
+
+  # PgAdmin
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'test@test.com'
+      PGADMIN_DEFAULT_PASSWORD: 'test'
+    ports:
+      - "54321:80"
+    networks:
+      - postgres-db-network
+
+networks:
+  postgres-db-network:
+    driver: bridge
+
+volumes:
+  pg_data:
+    driver: local
+  postgres-data2:

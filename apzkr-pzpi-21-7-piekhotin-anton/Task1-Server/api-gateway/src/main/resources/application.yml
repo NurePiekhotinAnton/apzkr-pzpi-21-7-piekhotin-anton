@@ -1,0 +1,27 @@
+server:
+  port: 8080
+#  ssl:
+#    key-store: classpath:safehouse.jks
+#    key-store-password: password
+#    key-store-type: JKS
+#    key-alias: spring-https
+
+jwt:
+  secret: 'secretKeyForApzProjFAJFASLDKJFLSAKDJFASLDKJFASLDKJFAJFAKJF'
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "https://safehouse-proj.azurewebsites.net"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders:
+              - "*"
+            maxAge: 3600

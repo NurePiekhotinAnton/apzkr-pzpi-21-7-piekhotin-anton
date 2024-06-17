@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: house-service
+  datasource:
+    url: jdbc:postgresql://house-db.postgres.database.azure.com:5432/house-db?user=postgres&password=Password1&sslmode=require
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
