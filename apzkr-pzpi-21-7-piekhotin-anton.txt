@@ -450,7 +450,7 @@ Mobile частина проєкту створена за допомогою м
 4.	Документація React. URL: https://react.dev/learn
 5.	Документація Kotlin. URL: https://kotlinlang.org/docs/home.html
 6.	Посилання на репозиторій GitHub. URL: https://github.com/NurePiekhotinAnton/apzkr-pzpi-21-7-piekhotin-anton
-7.	Посилання на відеоролик на YouTube. URL:  https://www.youtube.com/watch?v=tTv4k6XpDMY
+7.	Посилання на відеоролик на YouTube. URL:  https://www.youtube.com/watch?v=-8VtfCPuL0U
 
 
  
